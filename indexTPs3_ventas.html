@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Sistemas 3 - Ventas</title>
+
+    <style>
+        body {
+            font-family: fantasy;
+            background-color: rgba(17, 17, 17, 0.986);
+        }
+
+        header {
+            background-color: rgb(255, 217, 4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 10%;
+
+        }
+
+        header h1 {
+            text-align: center;
+            line-height: 25px;
+            height: 100px;
+        }
+
+        .sidebar{
+            background-color: rgb(49, 49, 49);
+            color: aliceblue;
+            width: 20%;
+            height: 94.5%;
+            position: absolute;
+            top: 10.5%;
+            left: 1px;
+        }
+
+        .sidebar ul{
+            position: absolute;
+            top: 100px;
+            right: 30px;
+            width: 70%;
+        }
+        .sidebar li{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 10px 0px;
+            text-align: center;
+        }
+
+        .sidebar li a{
+            color: rgb(206, 149, 26);
+        }
+        .sidebar hr{
+            background-color: rgb(197, 165, 20);
+            height: 2px;
+            border: none;
+        }
+
+        .main {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: whitesmoke;
+            position: absolute;
+            width: 79.5%;
+            height: 94.5%;
+            right: 1px;
+            top: 10.5%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 3px;
+            border: 1px solid rgb(10, 10, 10);
+        }
+
+        /*   .empleado {
+            position: absolute;
+            top: o;
+            right: 0;
+        } */
+
+        footer {
+            background-color: rgb(255, 217, 4);
+            width: 100%;
+            height: 5%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+        }
+        footer h5{
+            text-align: center;
+            line-height: 1%;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Wonder Hamburgueserias</h1>
+    </header>
+
+    <main>
+
+        <div class="sidebar">
+
+            <ul>
+                <li><a href="indexTPs3_ventas.html">Ventas</a></li>
+                <hr>
+                <li><a href="indexTPs3_delivery.html">Delivery</a></li>
+                <hr>
+                <li><a href="indexTPs3_RegEmple.html"> Registro de Empleados </a></li>
+                <hr>
+                <li><a href="indexTPs3_RegProdu.html"> Registro de Productos</a></li>
+                <hr>
+                <li><a href="indexTPs3_stock.html"> Stock </a></li>
+                
+            </ul>
+        </div>
+    
+        <div class="main">
+            <h2>ventas</h2>
+        </div>
+
+
+        <!--  *CONTENIDO PARA SIDEBAR: REGISTRO DE EMPLEADOS
+        <section style="position: fixed; right: 1px; top: 10%; max-width: 40%; border: 1px solid black; padding: 0.5px;">
+            <div class="empleado">
+                <h3>registro de empleados</h3>
+                <input type="text" id="vendedores" placeholder="Vendedor">
+                <input type="text" id="repartidor" placeholder="repartidor">
+                <input type="text" id="fecha" placeholder="fecha">
+                <br>
+                <input type="button" value="cargar">
+
+            </div>
+        </section> -->
+
+        <!--* CONTENIDO PARA SIDEBAR: REGITRO DE PRODUCTOS 
+            <h3>Registro de productos</h3>
+        <section class="productos">
+
+            <select name="pedido" id="_pedido">
+                <option value="hamburguesa simple">hamburguesa simple</option>
+                <option value="hamburguesa doble">hamburguesa doble</option>
+            </select>
+            <input type="text" id="bebida" placeholder="bebidas">
+            <br>
+            <input type="button" value="registrar">
+        </section> -->
+
+        <!--   * CONTENIDO PARA SIDEBAR: SECCION DE VENTA
+            <section class="venta">
+            <h3>Ingreso de pedido</h3>
+             * se usara un select 
+                <select name="pedido" id="_pedido">
+                <option value="hamburguesa simple">hamburguesa simple</option>
+                <option value="hamburguesa doble">hamburguesa doble</option>
+            </select>
+            *ingreso comun 
+        <input type="text" id="pedidoComi" placeholder="producto elegido">
+            <input type="text" id="pedidoBebi" placeholder="bebida elegida">
+        <br><input type="button" value="cargar">
+        </section> -->
+        <!--  <section class="facturar">
+            <h3>Cobro</h3>
+            * se usara un select para eleccion del medio de pago
+            * o un tag radio
+            <input type="text" id="medioPago" placeholder="medio de pago">
+            <br>
+            <input type="button" value="facturar">
+        </section> -->
+
+
+        <!-- *CONTENIDO PARA SIDEBAR: MUESTRA DE STOCK
+
+            <section class="stock">
+          *  Aqui muestro el listado del stock.  
+            *El mismo (mas adelante) será actualizable, 
+        *segun vendo disminuye y segun registro crece 
+            <h6>Lista de productos</h6>
+
+            <input type="button" value="Mostrar Stock" onclick="mostrarStock()">
+            <br>
+            <br>
+            <div id="tabla" style="display:none;">
+                <table style="border-collapse: collapse; border: 1px solid;">
+                    <thead>
+                        <tr>
+                            <th>Hamburguesas</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tbody2">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="p1"> </p>
+
+
+        </section> -->
+
+    </main>
+
+    <footer>
+        <h5> Sistemas 3 </h5>
+    </footer>
+
+    <!--  <script src="TP_Sistemas3.js"></script> -->
+</body>
+
+</html>
