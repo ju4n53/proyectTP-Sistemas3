@@ -30,7 +30,7 @@
             height: 100px;
         }
 
-        .sidebar{
+        .sidebar {
             background-color: rgb(49, 49, 49);
             color: aliceblue;
             width: 20%;
@@ -40,29 +40,30 @@
             left: 1px;
         }
 
-        .sidebar ul{
+        .sidebar ul {
             position: absolute;
-            top: 100px;
+            top: 30px;
             right: 30px;
             width: 70%;
         }
-        .sidebar li{
+
+        .sidebar li {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             padding: 10px 0px;
             text-align: center;
         }
 
-        .sidebar li a{
+        .sidebar li a {
             color: rgb(206, 149, 26);
         }
-        .sidebar hr{
+
+        .sidebar hr {
             background-color: rgb(197, 165, 20);
             height: 2px;
             border: none;
         }
 
         .main {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             background-color: whitesmoke;
             position: absolute;
             width: 79.5%;
@@ -71,16 +72,19 @@
             top: 10.5%;
         }
 
-        .mainStock{
-            position: absolute;
-            top: 30px;
-            left: 40px;
-        }
         th,
         td {
             text-align: left;
             padding: 3px;
             border: 1px solid rgb(10, 10, 10);
+        }
+
+        .conteinerMain {
+
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: absolute;
+            top: 60px;
+            left: 40px;
         }
 
         /*   .empleado {
@@ -99,7 +103,8 @@
             right: 0;
 
         }
-        footer h5{
+
+        footer h5 {
             text-align: center;
             line-height: 1%;
             height: 50px;
@@ -109,6 +114,7 @@
 
 <body>
     <header>
+        <img src="https://thumbs.dreamstime.com/b/s%C3%ADmbolo-de-la-muestra-del-icono-vector-hamburguesa-124299508.jpg" alt="burguer" style="position: absolute; width: 20.5%; height: 100%;">
         <h1>Wonder Hamburgueserias</h1>
     </header>
 
@@ -121,12 +127,13 @@
                 <hr>
                 <li><a href="indexTPs3_delivery.html">Delivery</a></li>
                 <hr>
-                <li><a href="indexTPs3_RegEmple.html"> Registro de Empleados </a></li>
-                <hr>
-                <li><a href="indexTPs3_RegProdu.html"> Registro de Productos</a></li>
-                <hr>
-                <li><a href="indexTPs3_stock.html"> Stock </a></li>
+                <li><a href="indexTPs3_RegProdu.html"> Registro de Productos </a></li>
                 
+                <li style="position: absolute; top: 340px;"><a href="indexTPs3_stock.html"> Stock</a></li>
+                
+                <li style="position: absolute; top: 370px;"><a href="indexTPs3_RegEmple.html"> Registro de Empleados </a></li>
+
+                <input type="button" value="⬅ salir" style="position: absolute; top: 460px; left: 50%; padding: 1px 20px 0px 10px;border-radius: 0px 10px 0px 10px; background-color: rgb(240, 77, 77); " onclick="salida()">
             </ul>
         </div>
     
@@ -259,6 +266,11 @@
     </footer>
 
     <script src="TP_Sistemas3.js"></script>
+    <script>
+        function salida(){
+            window.location.href = "testing_tpS3Validador.html";
+        }
+    </script>
 </body>
 
 </html>

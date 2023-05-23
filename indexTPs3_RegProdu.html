@@ -42,7 +42,7 @@
 
         .sidebar ul {
             position: absolute;
-            top: 100px;
+            top: 30px;
             right: 30px;
             width: 70%;
         }
@@ -114,6 +114,7 @@
 
 <body>
     <header>
+        <img src="https://thumbs.dreamstime.com/b/s%C3%ADmbolo-de-la-muestra-del-icono-vector-hamburguesa-124299508.jpg" alt="burguer" style="position: absolute; width: 20.5%; height: 100%;">
         <h1>Wonder Hamburgueserias</h1>
     </header>
 
@@ -122,16 +123,17 @@
         <div class="sidebar">
 
             <ul>
-                <li><a href="indexTPs3_RegProdu.html"> Registro de Productos</a></li>
+                <li><a href="indexTPs3_ventas.html">Ventas</a></li>
                 <hr>
                 <li><a href="indexTPs3_delivery.html">Delivery</a></li>
                 <hr>
-                <li><a href="indexTPs3_RegEmple.html"> Registro de Empleados </a></li>
-                <hr>
-                <li><a href="indexTPs3_ventas.html">Ventas</a></li>
-                <hr>
-                <li><a href="indexTPs3_stock.html"> Stock </a></li>
+                <li><a href="indexTPs3_RegProdu.html"> Registro de Productos </a></li>
+                
+                <li style="position: absolute; top: 340px;"><a href="indexTPs3_stock.html"> Stock</a></li>
+                
+                <li style="position: absolute; top: 370px;"><a href="indexTPs3_RegEmple.html"> Registro de Empleados </a></li>
 
+                <input type="button" value="⬅ salir" style="position: absolute; top: 460px; left: 50%; padding: 1px 20px 0px 10px;border-radius: 0px 10px 0px 10px; background-color: rgb(240, 77, 77); " onclick="salida()">
             </ul>
         </div>
 
@@ -205,6 +207,11 @@
                     <section id="java">
                         <script src="RegProdu.js"></script>
                         <script src="RegProdu2.js"></script>
+                        <script>
+                            function salida(){
+                                window.location.href = "testing_tpS3Validador.html";
+                            }
+                        </script>
                         <p id="pEst"></p>
                     </section>
                     <br><br>

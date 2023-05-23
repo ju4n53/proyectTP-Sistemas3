@@ -10,14 +10,12 @@
 
 <body style="font-family: fantasy; background-color:rgba(17, 17, 17, 0.986);">
 
-    <header
-        style="position: absolute; top: 1px; width: 100%; height: 50px; 
+    <header style="position: absolute; top: 1px; width: 100%; height: 50px; 
         background-color: rgb(255, 217, 4);">
         <h1 style="text-align: center; line-height: 10px;">Wonder Hamburgueserias</h1>
     </header>
 
-    <div class="login"
-        style=" width: 300px; height: 300px; position: fixed; left: 50%; 
+    <div class="login" style=" width: 300px; height: 300px; position: fixed; left: 50%; 
         top: 50%; transform: translate(-50% , -50%); 
         background-color: rgb(53, 52, 52); border-radius: 23%;">
 
@@ -25,12 +23,15 @@
             <br>
             <div class="inputs" style="position: fixed; left: 20%; top: 30%;">
 
-                <input type="text" id="Nombr" placeholder="usuario" maxlength="15" style="border-radius: 5px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                <input type="text" id="Nombr" placeholder="usuario" maxlength="15"
+                    style="border-radius: 5px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
                 <br><br>
-                <input type="password" id="Passw" placeholder="contraseña" maxlength="12" style="border-radius: 5px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                <input type="password" id="Passw" placeholder="contraseña" maxlength="12"
+                    style="border-radius: 5px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
                 <br> <br>
 
-                <input type="button" value="ingresar" onclick="ingreso()" style="border-radius: 4px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                <input type="button" value="ingresar" onclick="ingreso()"
+                    style="border-radius: 4px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
             </div>
         </section>
 
@@ -38,6 +39,11 @@
 
 
     <script>
+
+        let usuarios = [
+            { user: "juan", key: "juan1" },
+            { user: "mariel", key: "mariel1" }
+        ]
 
         function ingreso() {
 
@@ -50,20 +56,40 @@
             idNombr = _nombr.value;
             idPassw = _passw.value;
 
-            
-            _passw.value = ""; 
+
+            _nombr.value="";
+            _passw.value = "";
             _passw.focus();
 
+            let userValido = false;
+            for (let i = 0; i < usuarios.length; i++) {
+                if (usuarios[i].user === idNombr && usuarios[i].key === idPassw) {
+                    userValido = true;
+                    break;
+                }
+            }
 
-            if (idPassw == "juan") {
 
+            if (userValido) {
+                
+                alert("Inicio de sesión exitoso")
+                
                 window.location.href = "IndexTP_Sistemas3.html";
-
-            }
-
+            } 
             else {
-                alert("constraseña incorrecta");
+                alert("Usuario o contraseña incorrectos");
             }
+
+
+            /*  if (idPassw == "juan") {
+ 
+                 window.location.href = "IndexTP_Sistemas3.html";
+ 
+             }
+ 
+             else {
+                 alert("constraseña incorrecta");
+             } */
 
             //console.log(idNomb, idPassw);
 
