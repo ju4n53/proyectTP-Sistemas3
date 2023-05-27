@@ -67,10 +67,10 @@
             background-color: whitesmoke;
             position: absolute;
             width: 79.5%;
-            height: 94.5%;
+            height: 89.5%;
             right: 1px;
             top: 10.5%;
-            overflow: auto;
+            overflow-x: scroll;
         }
 
         th,
@@ -94,6 +94,18 @@
             right: 0;
         } */
 
+        .responsive {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .regEmpleado, .tablaEmplead{
+            flex: 1 1 50%;
+            padding: 10px;
+            box-sizing: border-box;
+
+        }
+
         footer {
             background-color: rgb(255, 217, 4);
             width: 100%;
@@ -110,17 +122,11 @@
             line-height: 1%;
             height: 50px;
         }
-
-        @media (max-width: 400px) {
-  .regEmpleado, .tablaEmplead {
-    width: 100%;
-  }
-}
     </style>
 </head>
 
 <body>
-   <header>
+    <header>
         <img src="fotoeditada.png" alt="burguer" style="position: absolute; width: 100px; height: 66px;">
         <h1>Wonder Hamburgueserias</h1>
     </header>
@@ -135,53 +141,69 @@
                 <li><a href="indexTPs3_delivery.html">Delivery</a></li>
                 <hr>
                 <li><a href="indexTPs3_RegProdu.html"> Registro de Productos </a></li>
-                
-                <li style="position: absolute; top: 340px;"><a href="indexTPs3_stock.html"> Stock</a></li>
-                
-                <li style="position: absolute; top: 370px;"><a href="indexTPs3_RegEmple.html"> Registro de Empleados </a></li>
 
-                <input type="button" value="⬅ salir" style="position: absolute; top: 460px; left: 40%; padding: 8px 22px 8px 20px;border-radius: 0px 10px 0px 10px; background-color: rgb(240, 77, 77); " onclick="salida()">
+                <li style="position: absolute; top: 340px;"><a href="indexTPs3_stock.html"> Stock</a></li>
+
+                <li style="position: absolute; top: 370px;"><a href="indexTPs3_RegEmple.html"> Registro de Empleados
+                    </a></li>
+
+                <input type="button" value="⬅ salir"
+                    style="position: absolute; top: 460px; left: 40%; padding: 8px 22px 8px 20px;border-radius: 0px 10px 0px 10px; background-color: rgb(240, 77, 77); "
+                    onclick="salida()">
             </ul>
         </div>
-    
+
         <div class="main">
+
             <h2 style="display: flex; align-items: center; justify-content: center;">Registro de empleados</h2>
 
-            <div class="regEmpleado" style="background-color: darkgray; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; height: 300px; width: 250px; position: absolute; top: 20%; left: 10%;">
+            <div class="responsive">
+                <div class="regEmpleado"
+                    style="background-color: darkgray; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; height: 470px; width: 250px;display: flex; top: 20%; left: 10%;">
 
-                <h3 style="text-align: center; margin-top: 1px;">Nuevo ingreso</h3>
-                <input type="text" id="nombr" placeholder="Nombre" style="position: absolute; top: 15%; left: 15%;">
-                <input type="text" id="apellid" placeholder="Apellido" style="position: absolute; top: 25%; left: 15%;">
-                <input type="text" id="dni" placeholder="DNI" style="position: absolute; top: 35%; left: 15%;">
-                <input type="text" id="Direcci" placeholder="Direccion" style="position: absolute; top: 45%; left: 15%;">
-                <label for="" style="position: absolute; top: 55%; left: 15%; font-size: 14px;">Fecha de nacimiento</label>
-                <input type="date" id="fechNac" placeholder="Fecha de nacimiento" style="position: absolute; top: 62%; left: 15%;">
-                <input type="text" id="telefo" placeholder="Telefono" style="position: absolute; top: 73%; left: 15%;">
+                    <h3 style="text-align: center; margin-top: 1px;">Nuevo ingreso</h3>
+                    <input type="text" id="nombr" placeholder="Nombre" style="position: absolute; top: 15%; left: 15%;">
+                    <input type="text" id="apellid" placeholder="Apellido"
+                        style="position: absolute; top: 25%; left: 15%;">
+                    <input type="text" id="dni" placeholder="DNI" style="position: absolute; top: 35%; left: 15%;">
+                    <input type="text" id="Direcci" placeholder="Direccion"
+                        style="position: absolute; top: 45%; left: 15%;">
+                    <label for="" style="position: absolute; top: 55%; left: 15%; font-size: 14px;">Fecha de
+                        nacimiento</label>
+                    <input type="date" id="fechNac" placeholder="Fecha de nacimiento"
+                        style="position: absolute; top: 62%; left: 15%;">
+                    <input type="text" id="telefo" placeholder="Telefono"
+                        style="position: absolute; top: 73%; left: 15%;">
 
-                <input type="button" value="Registrar" onclick="guardar()" style="position: absolute; top: 87%; left: 30%;">
+                    <input type="button" value="Registrar" onclick="guardar()"
+                        style="position: absolute; top: 87%; left: 30%;">
+                </div>
+
+                <div class="tablaEmplead"
+                    style="background-color: rgb(206, 206, 201); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; height: 300px; width: 400px; display: flex; top: 20%; left: 50%;">
+
+                    <table style="border-collapse: collapse; border: 1px;">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>DNI</th>
+                                <th>Direccion</th>
+                                <th>Fecha de nacimiento</th>
+                                <th>Telefono</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
             </div>
 
-            <div class="tablaEmplead" style="background-color: rgb(206, 206, 201); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; height: 300px; width: 400px; position: absolute; top: 20%; left: 50%;">
-
-                <table style="border-collapse: collapse; border: 1px;">
-<thead>
-    <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>DNI</th>
-        <th>Direccion</th>
-        <th>Fecha de nacimiento</th>
-        <th>Telefono</th>
-
-    </tr>
-</thead>
-<tbody>
-    
-</tbody>
-
-                </table>
-
-            </div>
         </div>
 
 
@@ -193,7 +215,7 @@
 
 
     <script>
-        function salida(){
+        function salida() {
             window.location.href = "testing_tpS3Validador.html";
         }
     </script>
